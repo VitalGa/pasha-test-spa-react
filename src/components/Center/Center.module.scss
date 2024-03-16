@@ -1,0 +1,26 @@
+$title-color: #E2F063;
+$text-color: white;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;  
+  margin: 20px 13px;  
+
+    .title {
+      color: $title-color;
+      font-size: 40px;      
+      font-family: 'Gilroy-Extrabold', sans-serif;
+      font-weight: 500;
+      padding-top: 40px;
+      padding-bottom: 30px;
+    }
+
+    .text {
+      height: 252px;
+      color: $text-color;
+      font-size: 20px;      
+      font-family: 'Gilroy-Light', sans-serif;
+      font-weight: 300;
+      line-height: 140%;
+    }
+}

@@ -1,0 +1,19 @@
+$logo-color: #FFFFFF;
+$background-color: #1E1E1E;
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background-color;  
+  height: 25px;
+  margin: 20px 10px;
+    .logo {
+      font-family: "Open Sans", sans-serif;      
+      color: $logo-color;
+      font-size: 30px;
+    }
+}
+
+
+

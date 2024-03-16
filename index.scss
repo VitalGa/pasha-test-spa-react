@@ -1,0 +1,21 @@
+#root {
+  margin: 0 auto; 
+  // text-align: center;
+}
+
+@font-face {
+  font-family: 'Gilroy-Extrabold';
+  src: url('./src/fonts/Gilroy-Extrabold.ttf') format('opentype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Gilroy-Light';
+  src: url('./src/fonts/Gilroy-Light.ttf') format('opentype');
+  font-weight: 300;
+}
+
+body {
+  font-family: 'Gilroy-Extrabold', 'Gilroy-Light', sans-serif;  
+  margin: 0;
+}
