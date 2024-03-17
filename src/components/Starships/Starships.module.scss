@@ -1,0 +1,21 @@
+$title-color2: #E2F063;
+$text-color: #FFFFFF;
+
+.title {
+  color: $title-color2; 
+  font-size: 40px;
+  font-family: 'Gilroy-Regular', sans-serif;
+  line-height: 120%;
+  font-weight: 400;
+}
+
+.text {
+  color: $text-color;
+}
+
+.menu {
+  display: flex;      
+}
+
+
+

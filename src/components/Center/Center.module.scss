@@ -4,15 +4,19 @@ $text-color: white;
 .wrapper {
   display: flex;
   flex-direction: column;  
-  margin: 20px 13px;  
-
+  margin: 20px 13px;
+  
     .title {
       color: $title-color;
       font-size: 40px;      
-      font-family: 'Gilroy-Extrabold', sans-serif;
-      font-weight: 500;
+      font-family: 'Gilroy-Regular', sans-serif;
+      font-weight: 400;
       padding-top: 40px;
       padding-bottom: 30px;
+
+        .span-top {
+          margin-bottom: 15px;
+        }
     }
 
     .text {
