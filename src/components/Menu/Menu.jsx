@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 
 const Menu = () => {
   return (
-    <div className={styles['wrapper-menu']}>
+    <div className={styles['wrapperMenu']}>
       <NavLink to="/allStarShips">
         <span className={styles['link']}>Starships</span>
       </NavLink>

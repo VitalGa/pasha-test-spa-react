@@ -1,0 +1,56 @@
+$text-color: #1E1E1E;
+$background-color:#FFFFFF;
+
+
+.container {
+  width: 360px;
+  height: 340px;
+  margin-left: 10px;
+  color: $text-color;
+  font-family: 'Gilroy', sans-serif;
+  font-size: 22px;
+  background-color: $background-color;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 140%;
+  padding-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.cost {
+  display: flex;
+  justify-content: space-between;  
+  margin-bottom: 20px;
+  margin-left: 27px;
+  margin-right: 27px;
+
+
+  span:last-child {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+.name {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 27px;
+  margin-right: 27px;
+
+  span:last-child {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    word-wrap: break-word;
+    text-align: right;
+  }
+}
+
+

@@ -7,14 +7,23 @@ $text-color: #FFFFFF;
   font-family: 'Gilroy-Regular', sans-serif;
   line-height: 120%;
   font-weight: 400;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  
 }
 
 .text {
   color: $text-color;
+  font-family: 'Gilroy-Light', sans-serif;
+  font-size: 22px;
+  margin-left: 10px;
+  margin-right: 25px;
 }
 
 .menu {
-  display: flex;      
+  display: flex; 
+  margin-bottom: 70px;     
 }
 
 

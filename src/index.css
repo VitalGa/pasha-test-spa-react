@@ -1,0 +1,8 @@
+@import './fonts/Gilroy/gilroy.scss';
+
+body {
+  font-family: 'Gilroy', sans-serif;
+  margin: 0;
+  background-color: #1E1E1E;
+  margin: 0 auto;
+}

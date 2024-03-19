@@ -14,10 +14,16 @@ $background-color: #1E1E1E;
       color: $logo-color;
       font-size: 30px;
     }
-    .logo-link {
+    .logoLink {
       text-decoration: none;
     }
 }
+
+.hidden {
+  display: none;
+}
+
+
 
 
 
