@@ -1,8 +1,18 @@
 @import './fonts/Gilroy/gilroy.scss';
 
 body {
-  font-family: 'Gilroy', sans-serif;
-  margin: 0;
+  font-family: 'Gilroy', sans-serif;  
   background-color: #1E1E1E;
-  margin: 0 auto;
-}
+  margin: 0 auto;  
+} 
+
+  
+  
+/* body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;  
+  font-family: 'Gilroy', sans-serif;  
+  background-color: #1E1E1E;
+} */
