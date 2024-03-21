@@ -39,18 +39,26 @@ $background-color:#FFFFFF;
 }
 
 .name {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr;
   justify-content: space-between;
   margin-left: 27px;
   margin-right: 27px;
-
-  span:last-child {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    word-wrap: break-word;
-    text-align: right;
-  }
+  white-space: nowrap;
+  overflow: hidden;
+  gap: 15px;
 }
+
+.name span:last-child {
+  font-family: 'Gilroy', sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  word-wrap: break-word;
+  text-align: right;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 
 

@@ -1,34 +1,41 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import styles from './Card.module.scss';
 import axios from 'axios';
 import Placeholder from '../Placeholder/Placeholder';
 
 const Card = ({ selectedValue }) => {
-  const [starships, setStarships] = useState([]);
   
-  console.log(selectedValue)
+  const [starshipsData, setStarshipsData] = useState([]);
+   
 
   useEffect(() => {
+     
     axios.get('https://swapi.dev/api/starships/')
       .then(response => {
-        let sortedStarships = [];
-        if (selectedValue === 'Name' || selectedValue === 'name') {
-          sortedStarships = response.data.results.sort((a, b) => a.name.localeCompare(b.name));
-        } else if (selectedValue === 'Cost' || selectedValue === 'cost') {
-          sortedStarships = response.data.results.sort((a, b) => a.cost_in_credits - b.cost_in_credits);
-        }
-        
-        setStarships(sortedStarships);
+        setStarshipsData(response.data.results);
+         
       })
       .catch(error => {
         console.error(error);
+         
       });
-  }, [selectedValue]);
+  }, []);
+
+  const sortedStarships = useMemo(() => { 
+    let sortedStarships = [...starshipsData];
+
+    if (selectedValue.toLowerCase() === 'name') {
+      sortedStarships.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (selectedValue.toLowerCase() === 'cost') {
+      sortedStarships.sort((a, b) => a.cost_in_credits - b.cost_in_credits);
+    }
+
+    return sortedStarships;
+  }, [selectedValue, starshipsData]);
 
   return (
     <div>
-      {starships.map(starship => (
+      {sortedStarships.map(starship => (
         <div key={starship.name} className={styles['container']}>
           <div className={styles['wrapper']}>
             {starship.image ? (
@@ -44,11 +51,11 @@ const Card = ({ selectedValue }) => {
             </div>
             <div className={styles['name']}>
               <span>Name:</span>
-              <span>{starship.name.length > 20 ? `${starship.name.substring(0, 18)}...` : starship.name}</span>
+              <span>{starship.name}</span>
             </div>
           </div>
         </div>
-      ))}
+      ))}     
     </div>
   );
 };

@@ -4,9 +4,7 @@ const Select = (props) => {
     
   const handleChange = (event) => {
     const selectedValue = event.target.value;
-    props.onSelectChange(selectedValue)
-    
-    console.log('Выбранное значение:', selectedValue);
+    props.onSelectChange(selectedValue)    
   }
 
     return (
