@@ -6,18 +6,16 @@ import Placeholder from '../Placeholder/Placeholder';
 const Card = ({ selectedValue }) => {
   
   const [starshipsData, setStarshipsData] = useState([]);
-   
+    
 
   useEffect(() => {
-     
+      
     axios.get('https://swapi.dev/api/starships/')
       .then(response => {
         setStarshipsData(response.data.results);
-         
       })
       .catch(error => {
         console.error(error);
-         
       });
   }, []);
 

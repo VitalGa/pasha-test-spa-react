@@ -15,9 +15,14 @@ $text-color: #FFFFFF;
   font-weight: 400;
   margin-top: 60px;
   margin-bottom: 30px;
-  margin-left: 10px;  
+  margin-left: 10px;    
 }
- 
+
+.titleTop {  
+  min-width: 340px;
+  height: 250px;
+}
+
 .text {
   color: $text-color;
   font-family: 'Gilroy-Light', sans-serif;

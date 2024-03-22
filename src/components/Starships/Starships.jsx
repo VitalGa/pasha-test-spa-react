@@ -14,12 +14,17 @@ const Starships = () => {
     <>
         
 
-          <div className={styles['container']}> 
-          <div className={styles['title']}>Starships</div>
-            <div className={styles['menu']}>
-              <div className={styles['text']}>Sort by:</div>
-              <Select selectedValue={selectedValue} onSelectChange={handleSelectChange} />
+        <div className={styles['container']}> 
+
+            <div className={styles['titleTop']}>
+              <div className={styles['title']}>Starships</div>
+              <div className={styles['menu']}>
+                <div className={styles['text']}>Sort by:</div>
+                <Select selectedValue={selectedValue} onSelectChange={handleSelectChange} />
+              </div>
             </div>
+
+
           <Card selectedValue={selectedValue} />
       </div>
     </>
