@@ -1,15 +1,14 @@
 import { useState, useEffect, useMemo } from 'react';
 import styles from './Card.module.scss';
 import axios from 'axios';
-import Placeholder from '../Placeholder/Placeholder';
+// import Placeholder from '../Placeholder/Placeholder';
+import { NavLink } from 'react-router-dom';
 
 const Card = ({ selectedValue }) => {
   
-  const [starshipsData, setStarshipsData] = useState([]);
-    
-
+  const [starshipsData, setStarshipsData] = useState([]);    
+  
   useEffect(() => {
-      
     axios.get('https://swapi.dev/api/starships/')
       .then(response => {
         setStarshipsData(response.data.results);
@@ -17,7 +16,7 @@ const Card = ({ selectedValue }) => {
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, []); 
 
   const sortedStarships = useMemo(() => { 
     let sortedStarships = [...starshipsData];
@@ -30,17 +29,15 @@ const Card = ({ selectedValue }) => {
 
     return sortedStarships;
   }, [selectedValue, starshipsData]);
-
+  
   return (
     <div>
       {sortedStarships.map(starship => (
-        <div key={starship.name} className={styles['container']}>
+        <NavLink to={`/starships/${getStarshipId(starship.url)}`} key={starship.name} className={styles['container']}>
+            
           <div className={styles['wrapper']}>
-            {starship.image ? (
-              <img src={starship.image} alt={starship.name} />
-            ) : (
-              <Placeholder />
-            )}
+          <img className={styles['image']} src={getStarshipImage(getStarshipId(starship.url))} alt={starship.name} />
+            {/* добавить onError */}
           </div>
           <div className={styles['costName']}>
             <div className={styles['cost']}>
@@ -52,10 +49,19 @@ const Card = ({ selectedValue }) => {
               <span>{starship.name}</span>
             </div>
           </div>
-        </div>
-      ))}     
+        </NavLink>
+      ))}  
     </div>
   );
 };
+
+const getStarshipId = (url) => {
+  const starshipId = url.split('/').filter(Boolean).pop();
+  return starshipId;
+}
+
+const getStarshipImage = (id) => {
+    return `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`
+}
 
 export default Card;

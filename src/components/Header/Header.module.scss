@@ -1,5 +1,6 @@
 $logo-color: #FFFFFF;
 $background-color: #1E1E1E;
+$text-color: white;
 
 .wrapper {
   display: flex;
@@ -8,7 +9,7 @@ $background-color: #1E1E1E;
   background-color: $background-color;  
   height: 25px;
   margin: 20px 10px;
-  
+
     .logo {
       font-family: "Open Sans", sans-serif;      
       color: $logo-color;
@@ -23,12 +24,6 @@ $background-color: #1E1E1E;
   display: none;
 }
 
-
-
-
-
-$text-color: white;
-
 .wrapper-menu {
   height: 550px;
   display: flex;
@@ -42,11 +37,15 @@ $text-color: white;
   
 
   a {
-    text-decoration: none;  
+    text-decoration: none;
   }
 
   .link {
-    text-decoration: none;  
+    text-decoration: none;
   }
+}
+
+.menu {
+  cursor: pointer;
 }
 

@@ -1,7 +1,6 @@
 $text-color: #1E1E1E;
 $background-color:#FFFFFF;
 
-
 .container {
   width: 340px;
   height: 330px;
@@ -11,7 +10,9 @@ $background-color:#FFFFFF;
   font-size: 22px;
   background-color: $background-color;
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  
+  display: block;
+  text-decoration: none;
 }
 
 .wrapper {
@@ -60,5 +61,10 @@ $background-color:#FFFFFF;
   white-space: nowrap;
 }
 
+.image {
+  width: 304px;
+  height: 195px;
+  border-radius: 8px;
+}
 
 
