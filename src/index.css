@@ -3,14 +3,8 @@
 body {
   font-family: 'Gilroy', sans-serif;  
   background-color: #1E1E1E;
-  
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Центрирует .container по горизонтали */
-    align-items: center; /* Центрирует .container по вертикали */
-    min-height: 100vh; /* Минимальная высота экрана */
-  
+  margin: 0;
+  padding: 0;  
 } 
 
 @media screen and (min-width: 360px) {

@@ -4,15 +4,19 @@ $text-color: white;
 .wrapper {
   display: flex;
   flex-direction: column;  
-  margin: 20px 13px;  
+  margin: 14px 11px; 
+  overflow: hidden;
   
     .title {
       color: $title-color;
       font-size: 40px;      
-      font-family: 'Gilroy-Regular', sans-serif;
+      font-family: 'Gilroy', sans-serif;
       font-weight: 400;
-      padding-top: 40px;
+      line-height: 120%;
+      padding-top: 50px;
       padding-bottom: 30px;
+      padding-left: 3px;
+      word-spacing: 10px;
 
         .span-top {
           margin-bottom: 15px;
@@ -22,10 +26,23 @@ $text-color: white;
     .text {
       height: 252px;
       color: $text-color;
-      font-size: 20px;      
-      font-family: 'Gilroy-Light', sans-serif;
+      font-family: 'Gilroy', sans-serif;      
+      font-size: 20px;
       font-weight: 300;
-      line-height: 140%;
+      line-height: 28px;      
     }
 }
 
+.liner {
+      width: 318px;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      bottom: 0;
+      left: 6px; 
+      background: linear-gradient(#8B39B2 0%, #E2F063 100% , #8B39B2 0%, #E2F063 100%);  
+      filter: blur(100px);
+      opacity: 60%;     
+      border-radius: 100%; 
+      // z-index: -1;
+    }

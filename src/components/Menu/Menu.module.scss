@@ -13,7 +13,8 @@ $text-color: white;
   font-weight: 300;
   text-decoration: none;
   position: fixed;
-  background-color: #1E1E1E;
+  background-color: #000000;
+  z-index: 1;
 
   a {
     text-decoration: none; 

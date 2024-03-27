@@ -7,6 +7,7 @@ import ActiveIcon from '../../assets/svg/ActiveIcon';
 
 const Header = () => {
   const [menuIcon, setMenuIcon] = useState(false);
+  // const [liner, setLiner] = useState(false);
 
   let location = useLocation();
 
@@ -23,6 +24,7 @@ const Header = () => {
         </NavLink>
         <div className={styles['menu']} onClick={() => {setMenuIcon(!menuIcon)}}>
           {menuIcon ? <ActiveIcon /> : <Icon />}
+          {/* {menuIcon ? <ActiveIcon /> : <Icon />} */}
         </div> 
       </div>
       { menuIcon ? <Menu /> : null}

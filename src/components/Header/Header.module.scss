@@ -7,16 +7,22 @@ $text-color: white;
   justify-content: space-between;
   align-items: center;
   background-color: $background-color;  
-  height: 25px;
-  margin: 20px 10px;
+  height: 18px;
+  margin: 20px 5px;
 
     .logo {
-      font-family: "Open Sans", sans-serif;      
+      font-family: "Open Sans", sans-serif;
+      margin-left: 4px;
+      margin-top: 13px;
+      font-weight: 600;
       color: $logo-color;
       font-size: 30px;
     }
     .logoLink {
-      text-decoration: none;
+      text-decoration: none;      
+      margin-left: 5px;
+      
+
     }
 }
 
@@ -34,6 +40,7 @@ $text-color: white;
   font-size: 60px;
   font-family: 'Gilroy-Extrabold', sans-serif;
   font-weight: 300;
+  margin-left: 3px;
   
 
   a {
