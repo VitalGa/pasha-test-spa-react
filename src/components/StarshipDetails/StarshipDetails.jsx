@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './StarshipDetails.module.scss';
 import { useParams, useNavigate } from 'react-router-dom';
+import Placeholder from '../Placeholder/Placeholder';
 
 const StarshipDetails = () => {
   const { id } = useParams();
@@ -9,6 +10,7 @@ const StarshipDetails = () => {
   const [starshipData, setStarshipData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -34,39 +36,48 @@ const StarshipDetails = () => {
   }, [hasError, navigate]);
 
   if (isLoading) {
-    return <div>Space loading...</div>
+    return <div>Space loading...</div>;
   }
 
-  
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
     <>
       <div className={styles['title']}>Starships</div>
       <div className={styles['container']}>
         { starshipData && (
           <>
-            <img
+            {imageError ? (
+              <Placeholder />
+            ) : (
+              <img
                 src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
                 alt={starshipData.name}
                 className={styles.starshipImage}
-            />
-              <div className={styles['text']}>
-                    <p>Model: 
-                        <span>{starshipData.model}</span>
-                      </p>
-                    <p>Name: 
-                      <span>{starshipData.name}</span>
-                      </p>
-                    <p>Length: 
-                      <span>{starshipData.length}</span>
-                      </p>
-                    <p>Cost:
-                      <span>{starshipData.cost_in_credits}</span>
-                      </p>
-                    <p>Created:
-                      <span>{starshipData.created.split('T')[0]}</span>
-                      </p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto aut, est ipsum dolor quas laboriosam architecto itaque, commodi, provident eligendi omnis blanditiis. Ratione omnis a rerum magnam perferendis exercitationem. Sapiente!
-                      </p>
+                onError={handleImageError}
+              />
+            )}
+            
+            <div className={styles['text']}>
+              <p>Model: 
+                  <span>{starshipData.model}</span>
+                </p>
+              <p>Name: 
+                <span>{starshipData.name}</span>
+                </p>
+              <p>Length: 
+                <span>{starshipData.length}</span>
+                </p>
+              <p>Cost:
+                <span>{starshipData.cost_in_credits}</span>
+                </p>
+              <p>Created:
+                <span>{starshipData.created.split('T')[0]}</span>
+                </p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto aut, est ipsum dolor quas laboriosam architecto itaque, commodi, provident eligendi omnis blanditiis. Ratione omnis a rerum magnam perferendis exercitationem. Sapiente!
+                </p>
             </div>
           </>
         )}
@@ -76,5 +87,6 @@ const StarshipDetails = () => {
 };
 
 export default StarshipDetails;
+
 
 

@@ -1,31 +1,32 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleMenuIcon, closeMenuIcon } from '../../store/menu.slice';
 import { NavLink, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import styles from './Header.module.scss';
 import Icon from '../../assets/svg/Icon';
 import Menu from '../Menu/Menu';
 import ActiveIcon from '../../assets/svg/ActiveIcon';
 
 const Header = () => {
-  const [menuIcon, setMenuIcon] = useState(false);
-  // const [liner, setLiner] = useState(false);
 
-  let location = useLocation();
+const dispatch = useDispatch();
+const menuIcon = useSelector((state) => state.menu.menuIcon);
+let location = useLocation();
 
-  useEffect(() => {
-    setMenuIcon(false)
-  }, [location]);
+
+useEffect(() => {
+  dispatch(closeMenuIcon(false));
+}, [location, dispatch]);
 
   return (
     <>
       <div className={styles['wrapper']}>
-        <NavLink   to="/" className={styles['logoLink']} 
-          onClick={() => setMenuIcon(false)}>
+        <NavLink  to="/" className={styles['logoLink']}>
           <div className={styles['logo']}>StarDB</div>
         </NavLink>
-        <div className={styles['menu']} onClick={() => {setMenuIcon(!menuIcon)}}>
+        <div className={styles['menu']} onClick={() => {dispatch(toggleMenuIcon(!menuIcon))}}>
           {menuIcon ? <ActiveIcon /> : <Icon />}
-          {/* {menuIcon ? <ActiveIcon /> : <Icon />} */}
-        </div> 
+        </div>
       </div>
       { menuIcon ? <Menu /> : null}
     </>

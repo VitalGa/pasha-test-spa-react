@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 
 const Card = ({ selectedValue }) => {
   
-  const [starshipsData, setStarshipsData] = useState([]);    
+  const [starshipsData, setStarshipsData] = useState([]);
   
   useEffect(() => {
     axios.get('https://swapi.dev/api/starships/')
@@ -33,11 +33,9 @@ const Card = ({ selectedValue }) => {
   return (
     <div>
       {sortedStarships.map(starship => (
-        <NavLink to={`/starships/${getStarshipId(starship.url)}`} key={starship.name} className={styles['container']}>
-            
+        <NavLink to={`/starships/${getStarshipId(starship.url)}`} key={starship.name} className={styles['container']}> 
           <div className={styles['wrapper']}>
           <img className={styles['image']} src={getStarshipImage(getStarshipId(starship.url))} alt={starship.name} />
-            {/* добавить onError */}
           </div>
           <div className={styles['costName']}>
             <div className={styles['cost']}>

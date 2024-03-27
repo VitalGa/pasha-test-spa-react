@@ -1,7 +1,7 @@
 $text-color: white;
 
 .wrapperMenu {
-  height: 550px;
+  height: 650px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ $text-color: white;
   font-weight: 300;
   text-decoration: none;
   position: fixed;
-  background-color: #000000;
+  background-color: #1E1E1E;
   z-index: 1;
 
   a {
