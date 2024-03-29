@@ -1,0 +1,43 @@
+$text-color: white;
+
+.wrapper {
+  margin-left: 10px;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;  
+  align-items:flex-start; 
+  gap: 30px; 
+  font-size: 30px;
+  color: $text-color;
+  font-family: 'Gilroy-Regular', sans-serif;
+
+  span {
+    font-size: 22px;    
+    font-weight: 300;
+  } 
+
+  input {
+    width: 340px;
+    height: 35px;
+    border-radius: 6px;
+  }
+
+  .button {
+    width: 117px;
+    height: 34px;
+    background-color: $text-color;
+    font-size: 22px;
+    color: black;
+    border-radius: 6px;
+    margin-top: 40px;
+  }
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.errorText {
+  color: red;
+  font-size: 0.5em;
+}

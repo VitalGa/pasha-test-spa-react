@@ -7,7 +7,9 @@ const Menu = () => {
         <NavLink to="/starships">
           <span className={styles['link']}>Starships</span>
         </NavLink>
-      <span>Form</span>
+        <NavLink to="/form">
+          <span>Form</span>
+        </NavLink>
       </div>
   )
 }

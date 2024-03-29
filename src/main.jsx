@@ -9,6 +9,7 @@ import StarshipDetails from './components/StarshipDetails/StarshipDetails'
 import Error from './components/Error/Error'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
+import Form from './components/Form/Form'
 
 const router = createBrowserRouter(
   [
@@ -27,6 +28,10 @@ const router = createBrowserRouter(
         {
           path: '/starships/:id',
           element: <StarshipDetails />,
+        },
+        {
+          path: '/form',
+          element: <Form />,
         },
         {
           path: '/404',

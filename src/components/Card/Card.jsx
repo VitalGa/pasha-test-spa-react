@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import styles from './Card.module.scss';
-import axios from 'axios';
-// import Placeholder from '../Placeholder/Placeholder';
+import axios from 'axios'; 
 import { NavLink } from 'react-router-dom';
 
 const Card = ({ selectedValue }) => {
