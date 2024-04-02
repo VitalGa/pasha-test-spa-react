@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1E1E1E;
+  height: 18px;
+  margin: 27px 9px;
+}
+.wrapper .logo {
+  font-family: "Open Sans", sans-serif;
+  color: #FFFFFF;
+  font-size: 30px;
+}
+.wrapper .logoLink {
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.wrapper-menu {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 60px;
+  font-family: "Gilroy-Extrabold", sans-serif;
+  font-weight: 300;
+  margin-left: 3px;
+}
+.wrapper-menu a {
+  text-decoration: none;
+}
+.wrapper-menu .link {
+  text-decoration: none;
+}
+
+.menu {
+  cursor: pointer;
+}/*# sourceMappingURL=Header.module.css.map */

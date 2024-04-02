@@ -9,20 +9,15 @@ $text-color: white;
   background-color: $background-color;  
   height: 18px;
   margin: 27px 9px;
-
     .logo {
-      font-family: "Open Sans", sans-serif;
-      // margin-left: 4px;
-      // margin-top: 13px;
-      font-weight: 600;
+      font-family: "Open Sans", sans-serif;  
       color: $logo-color;
       font-size: 30px;
+      padding-left: 2px;
+      letter-spacing: 0.3px;
     }
     .logoLink {
-      text-decoration: none;      
-      // margin-left: 5px;
-      
-
+      text-decoration: none; 
     }
 }
 

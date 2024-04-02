@@ -5,8 +5,7 @@ $text-color: white;
   display: flex;
   flex-direction: column;  
   margin: 14px 11px; 
-  overflow: hidden;
-  
+  overflow: hidden;  
     .title {
       color: $title-color;
       font-size: 40px;      
@@ -17,7 +16,6 @@ $text-color: white;
       padding-bottom: 30px;
       padding-left: 3px;
       word-spacing: 10px;
-
         .span-top {
           margin-bottom: 15px;
         }

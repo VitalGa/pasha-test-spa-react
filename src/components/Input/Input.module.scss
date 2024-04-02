@@ -1,14 +1,27 @@
 $text-color: white;
+$title-color2: #E2F063;
+$text-color: white;
+
 
 .container {
   min-width: 340px;
   display: flex;
   justify-content: center;
 }
-
+.title {
+  color: $title-color2; 
+  font-family: Gilroy-Medium, sans-serif;
+  font-size: 40px;  
+  line-height: 120%;
+  font-weight: 400;
+  margin-top: 49px;
+  margin-bottom: 16px;
+  // margin-left: 8px;
+  // align-self: flex-start;
+}
 .wrapper {  
   min-width: 340px;
-  height: 255px;
+  // height: 369px;
   display: flex;
   flex-direction: column;  
   align-items:flex-start;
@@ -16,28 +29,31 @@ $text-color: white;
   color: $text-color;
   font-family: 'Gilroy', sans-serif;
 
+  
+
   span {
     font-size: 22px;    
     font-weight: 300;
     padding-left: 3px;
     margin-bottom: 9px;
-    letter-spacing: -0.1px;
+    letter-spacing: -0.2px;
   }
 
   input {
     width: 337px;
-    height: 35px;
+    height: 32px;
     border-radius: 6px;
   }
 
   .button {
     width: 120px;
-    height: 34px;
+    height: 40px;
     background-color: $text-color;
     font-size: 22px;
     color: black;
     border-radius: 6px;
-    margin-top: 40px;
+    margin-top: 34px;
+    letter-spacing: 0.7px;
   }
 }
 

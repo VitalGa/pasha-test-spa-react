@@ -44,7 +44,7 @@ const StarshipDetails = () => {
   };
 
   return (
-    <>
+    <>     
       <div className={styles['title']}>Starships</div>
       <div className={styles['container']}>
         { starshipData && (
@@ -81,7 +81,7 @@ const StarshipDetails = () => {
             </div>
           </>
         )}
-      </div>
+      </div>    
     </>
   );
 };

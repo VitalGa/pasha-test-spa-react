@@ -1,14 +1,10 @@
-// @import '../../../variable'
-
-$text-color-white: white;
-
 .button {
   width: 117px;
   height: 34px;
-  background-color: $text-color-white;
+  background-color: white;
   font-size: 22px;
   color: black;
   border-radius: 6px;
   margin-left: 10px;
   margin-top: 40px;
-}
+}/*# sourceMappingURL=Button.module.css.map */

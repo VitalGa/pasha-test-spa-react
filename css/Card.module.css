@@ -1,16 +1,13 @@
-$text-color: #1E1E1E;
-$background-color:#FFFFFF;
-
 .container {
   width: 340px;
   height: 330px;
-  // margin-left: 10px;
-  color: $text-color;
-  font-family: 'Gilroy', sans-serif;
+  margin-left: 10px;
+  color: #1E1E1E;
+  font-family: "Gilroy", sans-serif;
   font-size: 22px;
-  background-color: $background-color;
+  background-color: #FFFFFF;
   border-radius: 8px;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
   display: block;
   text-decoration: none;
 }
@@ -26,17 +23,15 @@ $background-color:#FFFFFF;
 
 .cost {
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
   margin-bottom: 20px;
   margin-left: 27px;
   margin-right: 27px;
-
-
-  span:last-child {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-  }
+}
+.cost span:last-child {
+  font-family: "Gilroy", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .name {
@@ -51,7 +46,7 @@ $background-color:#FFFFFF;
 }
 
 .name span:last-child {
-  font-family: 'Gilroy', sans-serif;
+  font-family: "Gilroy", sans-serif;
   font-size: 22px;
   font-weight: bold;
   word-wrap: break-word;
@@ -65,6 +60,4 @@ $background-color:#FFFFFF;
   width: 304px;
   height: 195px;
   border-radius: 8px;
-}
-
-
+}/*# sourceMappingURL=Card.module.css.map */

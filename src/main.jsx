@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css'
+import './index.scss'
 import ReactDOM from 'react-dom/client'
 import Layout from '../layout/Layout'
 import Center from './components/Center/Center' 

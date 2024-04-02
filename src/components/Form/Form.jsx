@@ -6,7 +6,7 @@ const Form = () => {
 
   return (
     <>
-      <div className={styles['title']}>Form</div>
+      {/* <div className={styles['title']}>Form</div> */}
       <Input/>
     </>
   )

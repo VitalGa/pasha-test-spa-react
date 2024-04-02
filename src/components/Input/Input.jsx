@@ -27,7 +27,9 @@ const Input = () => {
 
   return (
     <div className={styles['container']}>
+      
       <form className={styles['wrapper']} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles['title']}>Form</div>
         <span>First Name:</span>
         <input 
           className={`${styles.firstName} ${errors.firstName ? styles.error : ''}`}

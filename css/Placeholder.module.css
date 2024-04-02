@@ -1,11 +1,8 @@
-
-
 .placeholder {
   width: 304px;
   height: 195px;
   border-radius: 8px;
-  background-color: $background-pholder;
-  font-family: $gilroy-regular;
+  font-family: "Gilroy-Regular", sans-serif;
   font-size: 22px;
   font-weight: bold;
   display: flex;
@@ -13,4 +10,4 @@
   align-items: center;
   text-align: center;
   line-height: 1.5;
-}
+}/*# sourceMappingURL=Placeholder.module.css.map */

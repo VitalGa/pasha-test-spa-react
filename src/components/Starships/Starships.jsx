@@ -18,8 +18,9 @@ const Starships = () => {
               <div className={styles['text']}>Sort by:</div>
               <Select selectedValue={selectedValue} onSelectChange={handleSelectChange} />
             </div>
+            <Card selectedValue={selectedValue} />
           </div>
-          <Card selectedValue={selectedValue} />
+          
       </div>
   );
 };
