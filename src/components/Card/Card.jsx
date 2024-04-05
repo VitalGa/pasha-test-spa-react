@@ -30,9 +30,9 @@ const Card = ({ selectedValue }) => {
   }, [selectedValue, starshipsData]);
   
   return (
-    <div>
+    <div className={styles['block']}>
       {sortedStarships.map(starship => (
-        <NavLink to={`/starships/${getStarshipId(starship.url)}`} key={starship.name} className={styles['container']}> 
+        <NavLink to={`/starships/${getStarshipId(starship.url)}`} key={starship.name} className={styles.container}> 
           <div className={styles['wrapper']}>
           <img className={styles['image']} src={getStarshipImage(getStarshipId(starship.url))} alt={starship.name} />
           </div>

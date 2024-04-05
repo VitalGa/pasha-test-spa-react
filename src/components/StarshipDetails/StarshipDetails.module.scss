@@ -20,7 +20,9 @@ $text-color: #FFFFFF;
   font-weight: 400;
   margin-top: 60px;
   margin-bottom: 30px;
-  margin-left: 10px;    
+  margin-left: 10px;   
+  width: 100%; 
+  margin-left: 15px;
 }
 
 img {
@@ -54,4 +56,11 @@ img {
     font-size: 20px;
 
   }
+}
+
+.loading {
+  color: #FFFFFF;
+  font-size: 30px;
+  margin-top: 80px;
+  margin-left: 15px;
 }

@@ -9,9 +9,10 @@ const Select = (props) => {
 
     return (
       <div className={styles['container']}>
-        <label htmlFor="selectOption" ></label>
+        <img src="Vector.svg" alt="галочка" /> 
+        <label htmlFor="selectOption"></label>
         <select id={styles['selectOption']} value={props.selectedValue} onChange={handleChange}>
-          <option value="name">Name</option>
+          <option  value="name">Name</option>
           <option value="cost">Cost</option>
         </select>
       </div>

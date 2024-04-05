@@ -3,39 +3,66 @@ $background-color:#FFFFFF;
 
 .container {
   width: 340px;
-  height: 330px;
-  // margin-left: 10px;
+  height: 330px;   
   color: $text-color;
   font-family: 'Gilroy', sans-serif;
   font-size: 22px;
   background-color: $background-color;
   border-radius: 8px;
-  margin-bottom: 20px;  
   display: block;
   text-decoration: none;
+  transition: transform 0.3s; 
+
+  @include ifdesktop {
+    width: 385px;
+    height: 397px;  
+  }
+}
+
+.container:hover {
+  transform: scale(1.04);
 }
 
 .wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 22px;
   font-size: 20px;
   line-height: 140%;
   padding-top: 15px;
   display: flex;
   justify-content: center;
+  
+  @include ifdesktop {
+    padding-top: 18px;
+  }
+  
 }
 
 .cost {
   display: flex;
   justify-content: space-between;  
   margin-bottom: 20px;
-  margin-left: 27px;
-  margin-right: 27px;
-
+  margin-left: 17px;
+  margin-right: 18px;
+  letter-spacing: -1.1px;
+  @include ifdesktop {
+    margin-top: 36px;
+    letter-spacing: -0.1px;
+    margin-right: 26px;
+    font-size: 24px;
+    margin-bottom: 0px;
+  }
 
   span:last-child {
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'Gilroy-Regular', sans-serif;
     font-size: 22px;
     font-weight: bold;
+    letter-spacing: -0.1px;
+
+    @include ifdesktop {       
+      letter-spacing: 1.6px;       
+      font-size: 24px;
+      margin-bottom: 21px;
+    }
   }
 }
 
@@ -43,28 +70,60 @@ $background-color:#FFFFFF;
   display: grid;
   grid-template-columns: auto 1fr;
   justify-content: space-between;
-  margin-left: 27px;
-  margin-right: 27px;
+  margin-left: 17px;
+  margin-right: 25px;
   white-space: nowrap;
   overflow: hidden;
   gap: 15px;
+  letter-spacing: -1.4px;
+
+  @include ifdesktop {       
+    letter-spacing: 1.6px; 
+  }  
+}
+
+.name span:first-child {  
+
+  @include ifdesktop {       
+    margin-top: 7px;     
+  }
 }
 
 .name span:last-child {
   font-family: 'Gilroy', sans-serif;
-  font-size: 22px;
+  font-size: 28px;
   font-weight: bold;
   word-wrap: break-word;
   text-align: right;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  letter-spacing: -0.1px;
+
+  @include ifdesktop {       
+    letter-spacing: -0.4px;
+        
+  }
 }
 
 .image {
   width: 304px;
   height: 195px;
   border-radius: 8px;
+  @include ifdesktop {
+    width: 345px;
+    height: 221px;
+  }
 }
 
+
+.block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  @include ifdesktop {
+    gap: 64px;     
+  }
+}
 

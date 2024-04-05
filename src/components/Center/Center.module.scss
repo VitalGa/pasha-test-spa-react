@@ -3,45 +3,55 @@ $text-color: white;
 
 .wrapper {
   display: flex;
-  flex-direction: column;  
-  margin: 14px 11px; 
-  overflow: hidden;  
-    .title {
-      color: $title-color;
-      font-size: 40px;      
-      font-family: 'Gilroy', sans-serif;
-      font-weight: 400;
-      line-height: 120%;
-      padding-top: 50px;
-      padding-bottom: 30px;
-      padding-left: 3px;
-      word-spacing: 10px;
-        .span-top {
-          margin-bottom: 15px;
-        }
+  flex-direction: column;
+  margin: 14px 11px;
+  overflow: hidden;
+
+  @include ifdesktop {
+    margin-top: 104px;
+    width: 1255px;
+  }
+
+  .title {
+    color: $title-color;
+    font-size: 40px;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400;
+    line-height: 120%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    padding-left: 3px;
+    word-spacing: 10px;
+
+    @include ifdesktop {
+      font-size: 70px;
+      padding-left: 67px;
+      padding-bottom: 56px;
+      letter-spacing: 0.1;
     }
 
-    .text {
-      height: 252px;
-      color: $text-color;
-      font-family: 'Gilroy', sans-serif;      
-      font-size: 20px;
-      font-weight: 300;
-      line-height: 28px;
-      padding-left: 2px;
-      letter-spacing: -0.1px;      
+    .span-top {
+      margin-bottom: 15px;
     }
+  }
+
+  .text {
+    height: 252px;
+    color: $text-color;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 28px;
+    padding-left: 2px;
+    letter-spacing: -0.1px;
+
+    @include ifdesktop {
+      font-size: 36px;
+      padding-left: 67px;
+      line-height: 140%;
+      width: 1178px;
+      letter-spacing: -0.2px;     
+    }
+  }
 }
-
-.liner {
-      width: 318px;
-      position: absolute;
-      top: 70px;
-      right: 0;
-      bottom: 0;
-      left: 6px; 
-      background: linear-gradient(#8B39B2 0%, #E2F063 100% , #8B39B2 0%, #E2F063 100%);  
-      filter: blur(120px);
-      opacity: 60%;
-      border-radius: 100%;
-    }
+ 

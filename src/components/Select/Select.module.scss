@@ -1,8 +1,35 @@
-#selectOption {
-  font-family: 'Gilroy-Normal', sans-serif;
+.container {
+  position: relative;
+
+  #selectOption {    
+  font-family: 'Gilroy', sans-serif;
   font-size: 22px;
-  width: 90px;
-  height: 35px;
+  width: 108px;
+  height: 37px;
   border: 2px solid #333;
   border-radius: 8px;
+  padding-left: 12px;
+  appearance: none; 
+  cursor: pointer; 
+
+  
 }
+img {
+  color: #000000;
+    width: 16px;
+    height: 8px;
+    position: absolute;
+    left: 80px;
+    top: 16px;
+    cursor: pointer;
+    pointer-events: none;
+
+
+    @include ifdesktop { 
+      left: 80px;
+      top: 20px;  
+  }
+  }
+}
+
+

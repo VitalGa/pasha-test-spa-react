@@ -36,7 +36,7 @@ const StarshipDetails = () => {
   }, [hasError, navigate]);
 
   if (isLoading) {
-    return <div>Space loading...</div>;
+    return <div className={styles.loading}>Space loading...</div>;
   }
 
   const handleImageError = () => {
@@ -44,9 +44,8 @@ const StarshipDetails = () => {
   };
 
   return (
-    <>     
-      <div className={styles['title']}>Starships</div>
       <div className={styles['container']}>
+        <div className={styles['title']}>Starships</div>
         { starshipData && (
           <>
             {imageError ? (
@@ -82,7 +81,7 @@ const StarshipDetails = () => {
           </>
         )}
       </div>    
-    </>
+    
   );
 };
 
