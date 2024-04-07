@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import styles from './Card.module.scss';
 import axios from 'axios'; 
 import { NavLink } from 'react-router-dom';
+import Placeholder from '../Placeholder/Placeholder';
 
 const Card = ({ selectedValue }) => {
   
@@ -29,12 +30,17 @@ const Card = ({ selectedValue }) => {
     return sortedStarships;
   }, [selectedValue, starshipsData]);
   
+  // const starshipImage = getStarshipImage(getStarshipId(starship.url));
+
   return (
     <div className={styles['block']}>
       {sortedStarships.map(starship => (
         <NavLink to={`/starships/${getStarshipId(starship.url)}`} key={starship.name} className={styles.container}> 
           <div className={styles['wrapper']}>
-          <img className={styles['image']} src={getStarshipImage(getStarshipId(starship.url))} alt={starship.name} />
+
+            <img className={styles['image']} src={getStarshipImage(getStarshipId(starship.url))} alt={starship.name}    /> 
+
+            <figcaption className={styles.capture}>{starship.name}</figcaption>
           </div>
           <div className={styles['costName']}>
             <div className={styles['cost']}>
@@ -44,8 +50,10 @@ const Card = ({ selectedValue }) => {
             <div className={styles['name']}>
               <span>Name:</span>
               <span>{starship.name}</span>
+              
             </div>
           </div>
+          
         </NavLink>
       ))}  
     </div>

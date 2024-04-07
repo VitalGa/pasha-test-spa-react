@@ -30,12 +30,36 @@ $background-color:#FFFFFF;
   padding-top: 15px;
   display: flex;
   justify-content: center;
+  position: relative;
+
+  .capture {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 110%;
+    color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.5s; 
+    appearance: none;
+  }
+  
+  &:hover .capture {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
   
   @include ifdesktop {
     padding-top: 18px;
   }
   
 }
+
+
 
 .cost {
   display: flex;
@@ -110,6 +134,15 @@ $background-color:#FFFFFF;
   width: 304px;
   height: 195px;
   border-radius: 8px;
+  transform: scale(1);
+  transition: opacity 0.3s, transform 0.5s;
+
+  &:hover {
+    transform: scale(0.9);
+    filter: blur(3px) brightness(70%);
+  }
+
+  
   @include ifdesktop {
     width: 345px;
     height: 221px;
