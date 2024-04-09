@@ -45,39 +45,43 @@ const StarshipDetails = () => {
 
   return (
       <div className={styles['container']}>
-        <div className={styles['title']}>Starships</div>
+        <div className={styles['title']}>{starshipData && starshipData.name}</div>
         { starshipData && (
           <>
-            {imageError ? (
-              <Placeholder />
-            ) : (
-              <img
-                src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
-                alt={starshipData.name}
-                className={styles.starshipImage}
-                onError={handleImageError}
-              />
-            )}
-            
-            <div className={styles['text']}>
-              <p>Model: 
-                  <span>{starshipData.model}</span>
-                </p>
-              <p>Name: 
-                <span>{starshipData.name}</span>
-                </p>
-              <p>Length: 
-                <span>{starshipData.length}</span>
-                </p>
-              <p>Cost:
-                <span>{starshipData.cost_in_credits}</span>
-                </p>
-              <p>Created:
-                <span>{starshipData.created.split('T')[0]}</span>
-                </p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto aut, est ipsum dolor quas laboriosam architecto itaque, commodi, provident eligendi omnis blanditiis. Ratione omnis a rerum magnam perferendis exercitationem. Sapiente!
-                </p>
+          <div className={styles.block}>
+              {imageError ? (
+                <Placeholder />
+              ) : (
+                <img
+                  src={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
+                  alt={starshipData.name}
+                  className={styles.starshipImage}
+                  onError={handleImageError}
+                />
+              )}
+              
+              <div className={styles['text']}>
+                <p>Model: 
+                    <span>{starshipData.model}</span>
+                  </p>
+                <p>Name: 
+                  <span>{starshipData.name}</span>
+                  </p>
+                <p>Length: 
+                  <span>{starshipData.length}</span>
+                  </p>
+                <p>Cost:
+                  <span>{starshipData.cost_in_credits}</span>
+                  </p>
+                <p>Created:
+                  <span>{starshipData.created.split('T')[0]}</span>
+                  </p>
+              </div>
             </div>
+
+              <p className={styles['textLong']}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim
+              </p>
+            
           </>
         )}
       </div>    

@@ -1,9 +1,9 @@
 $title-color2: #E2F063;
 $text-color: #FFFFFF;
-@mixin flexColumn {
-  display: flex;
-  flex-direction: column;
-}
+// @mixin flexColumn {
+//   display: flex;
+//   flex-direction: column;
+// }
 
 .container {
   margin: auto;
@@ -23,12 +23,23 @@ $text-color: #FFFFFF;
   margin-left: 10px;   
   width: 100%; 
   margin-left: 15px;
+
+  @include ifdesktop {
+    font-size: 70px;
+    font-weight: 300;
+    margin-left: 150px;
+  }
 }
 
 img {
   width: 340px;
   height: 228px;
   border-radius: 8px;
+
+  @include ifdesktop {
+    width: 624px;
+    height: 419px;
+  }
 }
 
 .text {
@@ -38,23 +49,50 @@ img {
   margin-left: 10px;
   margin-top: 30px;
 
+  @include ifdesktop {
+    width: 609px;
+    height: 360px;
+    margin-top: 23px;
+    gap: 35px;
+    }  
+
   p {
     @include flexColumn;
     gap: 10px;
     font-size: 24px;
     margin: 0;
 
-    span {
+    @include ifdesktop {
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 28px;
+    }
+  
+  span {
       display: block;
       font-size: 30px;
       font-family: 'Gilroy-Medium', sans-serif;
+
+      @include ifdesktop { 
+        font-size: 40px;
+      }
+      
     }
   }
+}
 
-  p:last-child {
-    font-family: 'Gilroy-Regular', sans-serif;
-    font-size: 20px;
+.textLong {
+  font-family: 'Gilroy-Regular', sans-serif;
+  font-size: 20px;
+  color: $text-color;
+  width: 360px;
+  display: block;
+  margin-left: 10px;
+  margin-right: 10px;
 
+  @include ifdesktop { 
+    width: 1287px;
+    font-size: 36px;
   }
 }
 
@@ -64,3 +102,15 @@ img {
   margin-top: 80px;
   margin-left: 15px;
 }
+
+.block {
+  display: flex;
+  flex-direction: column;
+
+  @include ifdesktop {
+    flex-direction: row;
+    gap: 45px;
+  }
+}
+
+

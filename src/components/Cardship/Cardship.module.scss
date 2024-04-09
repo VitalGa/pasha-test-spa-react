@@ -37,6 +37,19 @@ $background-color:#FFFFFF;
     opacity: 1;
   }
 
+  .image {
+    width: 304px;
+    height: 195px;
+    border-radius: 8px;
+    transform: scale(1);
+    transition: opacity 0.3s, transform 0.5s;
+  
+    @include ifdesktop {
+      width: 345px;
+      height: 221px;
+    }
+  }
+
   &:hover .image {
     transform: scale(0.9);
     filter: blur(3px) brightness(70%);
@@ -64,8 +77,7 @@ $background-color:#FFFFFF;
   
   @include ifdesktop {
     padding-top: 18px;
-  }
-  
+  }  
 }
 
 .cost {
@@ -115,8 +127,8 @@ $background-color:#FFFFFF;
 
 .name span:first-child {  
 
-  @include ifdesktop {       
-    margin-top: 7px;     
+  @include ifdesktop { 
+    margin-top: 7px; 
   }
 }
 
@@ -131,31 +143,11 @@ $background-color:#FFFFFF;
   white-space: nowrap;
   letter-spacing: -0.1px;
 
-  @include ifdesktop {       
+  @include ifdesktop {
     letter-spacing: -0.4px;
-        
   }
 }
 
-.image {
-  width: 304px;
-  height: 195px;
-  border-radius: 8px;
-  transform: scale(1);
-  transition: opacity 0.3s, transform 0.5s;
-
-  @include ifdesktop {
-    width: 345px;
-    height: 221px;
-  }
-}
-
-.block {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 30px;
-  @include ifdesktop {
-    gap: 64px;     
-  }
+.holder {
+  background-color: rgb(190, 156, 156) !important;
 }

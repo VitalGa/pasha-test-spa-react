@@ -1,14 +1,15 @@
 import CardShip from '../Cardship/Cardship';
 import { useState, useEffect, useMemo } from 'react';
 import styles from './Card.module.scss';
-import axios from 'axios';
+import axios from 'axios'; 
 
 
 
 const Card = ({ selectedValue }) => {
   
   const [starshipsData, setStarshipsData] = useState([]);
-  
+
+
   useEffect(() => {
     axios.get('https://swapi.dev/api/starships/')
       .then(response => {
@@ -36,22 +37,11 @@ const Card = ({ selectedValue }) => {
           <CardShip
           key={starship.name}
           starship={starship}
-          getStarshipId={getStarshipId}
-          getStarshipImage={getStarshipImage}
           />
         )
       )}  
     </div>
   );
 };
-
-const getStarshipId = (url) => {
-  const starshipId = url.split('/').filter(Boolean).pop();
-  return starshipId;
-}
-
-const getStarshipImage = (id) => {
-    return `https://starwars-visualguide.com/assets/img/starships/${id}.jpg`
-}
 
 export default Card;

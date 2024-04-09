@@ -1,12 +1,33 @@
-import styles from './Cardship.module.scss'; 
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './Cardship.module.scss';
+import Placeholder from '../Placeholder/Placeholder';
+import { getStarshipImage,getStarshipId } from '../Card/starship-utils';
 
 
-const CardShip = ({ starship, getStarshipId, getStarshipImage }) => {
+const CardShip = ({ starship }) => { 
+
+  const starshipId = getStarshipId(starship.url)
+  const starshipImage = getStarshipImage(starshipId)
+
+  const [imageError, setImageError] = useState(false); 
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
   return (
-    <NavLink to={`/starships/${getStarshipId(starship.url)}`} key={starship.name} className={styles.container}>
+    <NavLink to={`/starships/${starshipId}`} key={starship.name} className={styles.container}>
       <div className={styles['wrapper']}>
-        <img className={styles['image']} src={getStarshipImage(getStarshipId(starship.url))} alt={starship.name} />
+
+        {imageError 
+        ? 
+        (<Placeholder  className={styles.holder}/>) 
+        : (<img className={styles['image']} src={starshipImage} alt={starship.name} 
+          onError={handleImageError}
+          />
+        )}
+
         <figcaption className={styles.caption}>{starship.name}</figcaption>
       </div>
       <div className={styles['costName']}>
@@ -24,4 +45,3 @@ const CardShip = ({ starship, getStarshipId, getStarshipImage }) => {
 };
 
 export default CardShip;
-
