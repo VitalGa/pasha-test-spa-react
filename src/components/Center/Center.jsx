@@ -3,6 +3,11 @@ import Liner from '../Liner/Liner'
 import styles from './Center.module.scss'
 
 const Center = () => {  
+
+  
+   
+
+
   const menuIcon = useSelector((state) => state.menu.menuIcon);
   
   return (
