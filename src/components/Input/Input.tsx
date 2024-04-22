@@ -11,17 +11,18 @@ const schema = z.object({
     .min(8, { message: 'Min length must be 8 characters' })
     .max(15, { message: 'Max length must be 15 characters' })
 });
+type Schema = z.infer<typeof schema>;
 
 const Input = () => {
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm({
+  } = useForm<Schema>({
     resolver: zodResolver(schema)
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data:Schema) => {
     console.log(data);
   };
 
@@ -44,7 +45,7 @@ const Input = () => {
         />
         {errors.lastName && <p className={styles.errorText}>{errors.lastName.message}</p>}
         
-        <input className={styles.button} type='submit'/> 
+        <input className={styles.button} type='submit'/>
       </form>
     </div>
     

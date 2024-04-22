@@ -1,8 +1,11 @@
 import styles from './Placeholder.module.scss'
 
-const Placeholder = ({className}) => {
-  console.log(className)
-  // const placeholderClasses = `${className || ''} ${styles.placeholder}`;
+type PlaceholderProps = {
+  className?: string
+}
+
+const Placeholder = ({className}: PlaceholderProps) => {
+  console.log(className) 
   return (
     <div className={`${className || ''} ${styles.placeholder}`}>
                 Sorry, <br /> 

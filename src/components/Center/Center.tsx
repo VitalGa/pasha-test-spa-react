@@ -1,14 +1,11 @@
-import { useSelector } from 'react-redux';
 import Liner from '../Liner/Liner'
 import styles from './Center.module.scss'
+import { useAppSelector } from '../../store/hooks';
 
 const Center = () => {  
 
-  
-   
 
-
-  const menuIcon = useSelector((state) => state.menu.menuIcon);
+  const menuIcon = useAppSelector((state) => state.menu.menuIcon);
   
   return (
       <>
