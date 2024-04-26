@@ -4,7 +4,7 @@ import styles from './Starships.module.scss';
 import Card from '../Card/Card';
 
 const Starships = () => {
-  const [selectedValue, setSelectedValue] = useState('Name');
+  const [selectedValue, setSelectedValue] = useState<string>('Name');
 
   const handleSelectChange = (value: string) => {
     setSelectedValue(value);

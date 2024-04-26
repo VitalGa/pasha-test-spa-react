@@ -4,10 +4,18 @@ import styles from './StarshipDetails.module.scss';
 import { useParams, useNavigate } from 'react-router-dom';
 import Placeholder from '../Placeholder/Placeholder';
 
+export type Starship = {
+  name: string;
+  model: string;
+  length: number;
+  cost_in_credits: number;
+  created: string;
+};
+
 const StarshipDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [starshipData, setStarshipData] = useState(null);
+  const [starshipData, setStarshipData] = useState<Starship | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -16,7 +24,7 @@ const StarshipDetails = () => {
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get(`https://swapi.dev/api/starships/${id}/`);
+        const response = await axios.get<Starship>(`https://swapi.dev/api/starships/${id}/`);
         setStarshipData(response.data);
         setIsLoading(false);
       } catch (error) {

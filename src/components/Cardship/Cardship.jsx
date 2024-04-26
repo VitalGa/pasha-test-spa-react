@@ -2,15 +2,13 @@ import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Cardship.module.scss';
 import Placeholder from '../Placeholder/Placeholder';
-import { getStarshipImage,getStarshipId } from '../Card/starship-utils';
+import { getStarshipImage, getStarshipId } from '../Card/starship-utils';
 
+const CardShip = ({ starship }) => {
+  const starshipId = getStarshipId(starship.url);
+  const starshipImage = getStarshipImage(starshipId);
 
-const CardShip = ({ starship }) => { 
-
-  const starshipId = getStarshipId(starship.url)
-  const starshipImage = getStarshipImage(starshipId)
-
-  const [imageError, setImageError] = useState(false); 
+  const [imageError, setImageError] = useState(false);
 
   const handleImageError = () => {
     setImageError(true);
@@ -19,12 +17,14 @@ const CardShip = ({ starship }) => {
   return (
     <NavLink to={`/starships/${starshipId}`} key={starship.name} className={styles.container}>
       <div className={styles['wrapper']}>
-
-        {imageError 
-        ? 
-        (<Placeholder  className={styles.holder}/>) 
-        : (<img className={styles['image']} src={starshipImage} alt={starship.name} 
-          onError={handleImageError}
+        {imageError ? (
+          <Placeholder className={styles.holder} />
+        ) : (
+          <img
+            className={styles['image']}
+            src={starshipImage}
+            alt={starship.name}
+            onError={handleImageError}
           />
         )}
 

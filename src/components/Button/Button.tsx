@@ -1,12 +1,10 @@
-import styles from './Button.module.scss'
+import styles from './Button.module.scss';
 
 interface MyObject {
-  text: string
+  text: string;
 }
-const Button = ({text}: MyObject) => {
-  return (
-    <button className={styles['button']}>{text}</button>
-  )
-}
+const Button = ({ text }: MyObject): JSX.Element => {
+  return <button className={styles['button']}>{text}</button>;
+};
 
-export default Button
+export default Button;
