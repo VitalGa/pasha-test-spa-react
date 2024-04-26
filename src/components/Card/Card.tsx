@@ -1,5 +1,5 @@
 import CardShip from '../Cardship/Cardship';
-import { useState, useEffect, useMemo, FC } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import styles from './Card.module.scss';
 import axios from 'axios';
 import { Starship } from '../StarshipDetails/StarshipDetails';

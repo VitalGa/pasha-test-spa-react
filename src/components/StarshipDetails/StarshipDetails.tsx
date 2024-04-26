@@ -10,6 +10,7 @@ export type Starship = {
   length: number;
   cost_in_credits: number;
   created: string;
+  url: string;
 };
 
 const StarshipDetails = () => {

@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Cardship.module.scss';
 import Placeholder from '../Placeholder/Placeholder';
 import { getStarshipImage, getStarshipId } from '../Card/starship-utils';
+import { Starship } from '../StarshipDetails/StarshipDetails';
 
-const CardShip = ({ starship }) => {
+type CardShipProps = {
+  starship: Starship;
+};
+
+const CardShip: FC<CardShipProps> = ({ starship }) => {
   const starshipId = getStarshipId(starship.url);
   const starshipImage = getStarshipImage(starshipId);
 
