@@ -10,10 +10,10 @@ type CardShipProps = {
 };
 
 const CardShip: FC<CardShipProps> = ({ starship }) => {
-  const starshipId = getStarshipId(starship.url);
+  const starshipId: number | undefined = getStarshipId(starship.url);
   const starshipImage = getStarshipImage(starshipId);
 
-  const [imageError, setImageError] = useState(false);
+  const [imageError, setImageError] = useState<boolean>(false);
 
   const handleImageError = () => {
     setImageError(true);

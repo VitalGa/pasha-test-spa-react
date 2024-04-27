@@ -4,7 +4,7 @@ import { toggleMenuIcon, closeMenuIcon } from '../../store/menu.slice';
 import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.scss';
 import Icon from '../../assets/svg/Icon';
-import Menu from '../Menu/Menu' 
+import Menu from '../Menu/Menu';
 import ActiveIcon from '../../assets/svg/ActiveIcon';
 import clsx from 'clsx';
 import { useAppSelector } from '../../store/hooks';
@@ -23,27 +23,33 @@ const Header = () => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    
+
     window.addEventListener('resize', handleResize);
-    // handleResize();
+
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const renderMenuIcon = () => {
     if (windowWidth >= 1440) {
-      return <div className={styles.rightMenu}>
-            <NavLink
-            to="/form"
+      return (
+        <div className={styles.rightMenu}>
+          <NavLink
+            to='/form'
             className={({ isActive }) => {
-              return clsx(styles.form, isActive && styles.active)
-            }}>Form</NavLink>
+              return clsx(styles.form, isActive && styles.active);
+            }}>
+            Form
+          </NavLink>
 
           <NavLink
-            to="/starships"
+            to='/starships'
             className={({ isActive }) => {
-              return clsx(styles.form, isActive && styles.active)
-            }}>Starships</NavLink>
+              return clsx(styles.form, isActive && styles.active);
+            }}>
+            Starships
+          </NavLink>
         </div>
+      );
     } else {
       return menuIcon ? <ActiveIcon /> : <Icon />;
     }
@@ -51,11 +57,15 @@ const Header = () => {
 
   return (
     <>
-    <div className={styles['wrapper']}>
-        <NavLink to="/" className={styles['logoLink']}>
+      <div className={styles['wrapper']}>
+        <NavLink to='/' className={styles['logoLink']}>
           <div className={styles['logo']}>StarDB</div>
         </NavLink>
-        <div className={styles['menu']} onClick={() => {dispatch(toggleMenuIcon(!menuIcon))}}>
+        <div
+          className={styles['menu']}
+          onClick={() => {
+            dispatch(toggleMenuIcon(!menuIcon));
+          }}>
           {renderMenuIcon()}
         </div>
       </div>
