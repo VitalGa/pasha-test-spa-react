@@ -1,17 +1,17 @@
-import styles from './Placeholder.module.scss'
+import styles from './Placeholder.module.scss';
 
 type PlaceholderProps = {
-  className?: string
-}
+  className?: string;
+};
 
-const Placeholder = ({className}: PlaceholderProps) => {
-  console.log(className) 
+const Placeholder = ({ className }: PlaceholderProps) => {
   return (
     <div className={`${className || ''} ${styles.placeholder}`}>
-                Sorry, <br /> 
-                the ships <br /> 
-                are being washed.</div>
-  )
-}
+      Sorry, <br />
+      the ships <br />
+      are being washed.
+    </div>
+  );
+};
 
-export default Placeholder
+export default Placeholder;
