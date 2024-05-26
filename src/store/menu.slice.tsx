@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { boolean } from 'zod';
 
 const initialState = {
-  menuIcon: false
+  menuIcon: false,
 };
 
 export const menuSlice = createSlice({
