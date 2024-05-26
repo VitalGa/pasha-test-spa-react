@@ -11,34 +11,39 @@ import { Provider } from 'react-redux';
 import { store } from './store/store';
 import Form from './components/Form/Form';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Layout />,
+      children: [
+        {
+          path: '/',
+          element: <Center />,
+        },
+        {
+          path: '/starships',
+          element: <Starships />,
+        },
+        {
+          path: '/starships/:id',
+          element: <StarshipDetails />,
+        },
+        {
+          path: '/form',
+          element: <Form />,
+        },
+        {
+          path: '/404',
+          element: <Error />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/',
-        element: <Center />,
-      },
-      {
-        path: '/starships',
-        element: <Starships />,
-      },
-      {
-        path: '/starships/:id',
-        element: <StarshipDetails />,
-      },
-      {
-        path: '/form',
-        element: <Form />,
-      },
-      {
-        path: '/404',
-        element: <Error />,
-      },
-    ],
+    basename: import.meta.env.BASE_URL,
   },
-]);
+);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
